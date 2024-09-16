@@ -1,0 +1,257 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  padding-left: 50px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background: transparent;
+  z-index: 0;
+}
+
+.intro {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+  letter-spacing: 0.1rem;
+  line-height: 1.7rem;
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: var(--white);
+}
+
+.name {
+  color: var(--cyan);
+  font-family: 'Bungee', cursive;
+  font-size: 1.5rem;
+}
+
+.desc {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 0.75rem;
+  word-spacing: 0.15rem;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  color: var(--white);
+}
+
+.btn_container {
+  font-size: 0.9rem;
+  position: relative;
+  overflow: hidden;
+  padding: 10px 13px;
+  transition: 0.2s;
+  color: var(--white);
+  border: 2px solid var(--grey);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn_hover,
+.btn {
+  font-family: 'Montserrat Alternates', sans-serif;
+  transition: all 0.2s ease-out;
+}
+
+.btn_hover {
+  position: absolute;
+  top: 10px;
+  left: 13px;
+  opacity: 0;
+  transform: translate(0, -100%);
+}
+
+.arrow {
+  margin-left: 5px;
+  font-size: 17px;
+  display: inline;
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn_container:hover,
+.btn_container:focus {
+  color: var(--cyan);
+  background-color: var(--dark-blue);
+  border-color: var(--cyan);
+  box-shadow: 0 0 8px var(--cyan);
+  text-shadow: 0 0 8px var(--cyan);
+}
+
+.btn_container:hover .btn,
+.btn_container:focus .btn {
+  opacity: 0;
+  transform: translate(0, 100%);
+}
+
+.btn_container:hover .btn_hover,
+.btn_container:focus .btn_hover {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.btn_container:hover .arrow,
+.btn_container:focus .arrow {
+  transform: rotate(90deg);
+}
+
+.profile_pic_container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.profile_pic {
+  width: 120px; /* Adjusted size */
+  height: 120px; /* Adjusted size */
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7); /* Shiny glittery effect */
+  border: 3px solid var(--cyan); /* Optional: adds a border for better visibility */
+}
+
+/* Modal Styles */
+.modal_content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.close_button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--cyan);
+  color: var(--white);
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  z-index: 1001; /* Make sure it’s above all */
+}
+
+.close_button:hover {
+  background: var(--dark-blue);
+}
+
+.modal_content iframe {
+  width: 100%;
+  height: calc(100% - 40px); /* Adjust height to account for button */
+}
+
+/* Responsive Styles */
+@media screen and (min-width: 480px) {
+  .container {
+    align-items: center;
+    padding-left: 0;
+  }
+
+  .intro {
+    font-family: 'Bungee', cursive;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .desc {
+    font-size: 0.9rem;
+  }
+
+  .btn_container {
+    font-size: 0.9rem;
+    padding: 8px 13px;
+  }
+
+  .btn_hover {
+    top: 8px;
+  }
+
+  .arrow {
+    margin-left: 6px;
+    font-size: 16px;
+  }
+
+  .profile_pic {
+    width: 100px; /* Adjusted size */
+    height: 100px; /* Adjusted size */
+  }
+
+  /* Ensure profile picture remains centered on smaller screens */
+  .profile_pic_container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center vertically */
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .intro {
+    font-size: 1.7rem;
+    line-height: 2.1rem;
+  }
+
+  .name {
+    font-size: 1.7rem;
+  }
+
+  .desc {
+    font-size: 1.03rem;
+  }
+
+  .btn_container {
+    font-size: 0.95rem;
+  }
+
+  .arrow {
+    font-size: 18px;
+  }
+
+  .profile_pic {
+    width: 120px; /* Adjusted size */
+    height: 120px; /* Adjusted size */
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .intro {
+    font-size: 1.9rem;
+    letter-spacing: 0.2rem;
+    line-height: 2.4rem;
+  }
+
+  .name {
+    font-size: 1.9rem;
+  }
+
+  .desc {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+
+  .btn_container {
+    font-size: 1.1rem;
+    padding: 12px 17px;
+  }
+
+  .btn_hover {
+    top: 12px;
+    left: 17px;
+  }
+
+  .arrow {
+    font-size: 20px;
+  }
+
+  .profile_pic {
+    width: 150px; /* Adjusted size */
+    height: 150px; /* Adjusted size */
+  }
+}
